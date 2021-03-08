@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body>
+		<div id="timerbox">
+			<h1>Countdown Clock</h1>
+
+			<div>Registration closes in <span id="time">05:00</span> minutes!</div>
+		</div>
+
+		<div id="puzzlebox-container" class="flexcenter">
+			<!--puzzlebox container-->
+			<div class="puzzlebox">
+				<img src="asset/1.jpg" />
+			</div>
+			<div class="puzzlebox">
+				<img src="asset/1.jpg" />
+			</div>
+			<div class="puzzlebox">
+				<img src="asset/1.jpg" />
+			</div>
+			<div class="puzzlebox">
+				<img src="asset/1.jpg" />
+			</div>
+			<div class="puzzlebox">
+				<img src="asset/1.jpg" />
+			</div>
+			<div class="puzzlebox">
+				<img src="asset/1.jpg" />
+			</div>
+			<div class="puzzlebox">
+				<img src="asset/1.jpg" />
+			</div>
+			<div class="puzzlebox">
+				<img src="asset/1.jpg" />
+			</div>
+			<div class="puzzlebox">
+				<img src="asset/1.jpg" />
+			</div>
+			<div class="puzzlebox">
+				<img src="asset/1.jpg" />
+			</div>
+			<div class="puzzlebox">
+				<img src="asset/1.jpg" />
+			</div>
+			<div class="puzzlebox">
+				<img src="asset/1.jpg" />
+			</div>
+		</div>
+
+		<div id="hintbox-container" class="flexcenter">
+			<!--hint box container-->
+			<div class="hintbox"><h1>easy</h1></div>
+			<div class="hintbox"><h1>meidum</h1></div>
+			<div class="hintbox"><h1>hard</h1></div>
+		</div>
+
+		<div id="hintcontent-container" class="flexcenter">
+			<!--hint content container-->
+			<div class="contentbox">
+				<h1>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+					molestiae, eligendi mollitia est suscipit maxime optio doloremque
+					saepe ullam eum, doloribus nulla ipsam neque laborum quasi
+					veritatis aut dolor magnam placeat iure consequatur. Perferendis,
+				</h1>
+			</div>
+		</div>
+
+		<div
+			id="backtopuzzle"
+			class="backbutton"
+			onclick="togglePuzzleboxContainer()"
+		>
+			back to puzzle
+		</div>
+
+		<div
+			id="backtohint"
+			class="backbutton"
+			onclick="toggleHintboxContainer()"
+		>
+			back to hint
+		</div>
+	</body>
+
+	<script src="script.js"></script>
+</html>

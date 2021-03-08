@@ -1,0 +1,98 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	max-width: 1024px;
+	height: 100vh;
+	margin: auto;
+	position: relative;
+}
+
+img {
+	max-width: 100%;
+}
+
+h1 {
+	color: white;
+	text-align: center;
+}
+
+.flex {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.flexcenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+#timerbox {
+	height: 150px;
+	max-width: 1024px;
+	background-color: grey;
+	margin: 25px 25px 0px 25px;
+}
+
+.puzzlebox {
+	height: 150px;
+	width: 150px;
+	background-color: red;
+	margin: 25px 25px 0px 25px;
+}
+
+.hintbox {
+	height: 150px;
+	width: 150px;
+	background-color: blue;
+	margin: 25px 25px 0px 25px;
+}
+#hintbox-container {
+	display: none;
+}
+#hintcontent-container {
+	display: none;
+}
+
+.hintbox {
+	height: 150px;
+	width: 150px;
+	background-color: blue;
+	margin: 25px 25px 0px 25px;
+}
+
+.contentbox {
+	height: 250px;
+	width: 800px;
+	background-color: blue;
+	margin: 25px 25px 0px 25px;
+}
+
+#backtopuzzle {
+	display: none;
+	height: 100px;
+	width: 100px;
+	background-color: green;
+	margin: 25px 25px 0px 25px;
+	position: absolute;
+	top: 400px;
+}
+#backtohint {
+	display: none;
+	height: 100px;
+	width: 100px;
+	background-color: green;
+	margin: 25px 25px 0px 25px;
+	position: absolute;
+	top: 400px;
+	left: 800px;
+}
+
+/*--copied code for clock*/
