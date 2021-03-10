@@ -1,3 +1,13 @@
+const puzzle1 = document.querySelector("#puzzle1");
+const easy = document.querySelector("#easy");
+const medium = document.querySelector("#medium");
+const hard = document.querySelector("#hard");
+const contentBox = document.querySelector(".contentbox");
+const hintarr = [
+	[111, 222, 333],
+	[444, 555, 666],
+];
+
 function togglePuzzleboxContainer() {
 	const x = document.getElementById("puzzlebox-container");
 	const y = document.getElementById("backtopuzzle");
@@ -31,15 +41,54 @@ function toggleHintboxContainer() {
 		z.style.display = "flex";
 	}
 }
+// const puzzle = document.querySelectorAll('.puzzlebox')
+// for (var i = 0; i < puzzleboxes.length; i++) {
+// 	puzzleboxes[i].);
+
+let imgurl = [
+	"asset/0.jpg",
+	"asset/1.jpg",
+	"asset/2.jpg",
+	"asset/3.jpg",
+	"asset/4.jpg",
+	"asset/5.jpg",
+	"asset/6.jpg",
+	"asset/7.jpg",
+	"asset/8.jpg",
+	"asset/9.jpg",
+	"asset/10.jpg",
+	"asset/11.jpg",
+];
 
 const puzzleboxes = document.querySelectorAll(".puzzlebox");
-for (var i = 0; i < puzzleboxes.length; i++) {
+for (let i = 0; i < puzzleboxes.length; i++) {
 	puzzleboxes[i].addEventListener("click", togglePuzzleboxContainer);
+	puzzleboxes[i].id = "puzzle" + i;
+
+	let img = document.createElement("img"); //create <img>
+	img.setAttribute("src", imgurl[i]); // set img src
+	puzzleboxes[i].appendChild(img);
 }
 
 const hintboxes = document.querySelectorAll(".hintbox");
-for (var i = 0; i < hintboxes.length; i++) {
+for (let i = 0; i < hintboxes.length; i++) {
 	hintboxes[i].addEventListener("click", toggleHintboxContainer);
+}
+
+for (let i = 0; i < puzzleboxes.length; i++) {
+	const puzzle = puzzleboxes[i];
+	puzzle.addEventListener("click", () => {
+		easy.addEventListener("click", () => {
+			contentBox.textContent = hintarr[i][0];
+			count ++
+		});
+		medium.addEventListener("click", () => {
+			contentBox.textContent = hintarr[i][1];
+		});
+		hard.addEventListener("click", () => {
+			contentBox.textContent = hintarr[i][2];
+		});
+	});
 }
 
 //online clock code
@@ -68,3 +117,6 @@ window.onload = function () {
 	startTimer(Minutes, display);
 };
 //----//online clock code
+
+//puzzlebox[0]{easy: hint1, meidum:sdsad, hard: hereerfew}
+//puzzlebox[1]{easy: hint234324, meidum:4353456, hard: 453453}
