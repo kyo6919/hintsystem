@@ -9,38 +9,40 @@
 	</head>
 
 	<body>
-		<div id="timerbox">
+		<div class="flexcentercol" id="timerbox">
 			<h1>Countdown Clock</h1>
 
-			<div>Registration closes in <span id="time">05:00</span> minutes!</div>
+			<div>
+				<h1 id="time">60:00</h1>
+			</div>
+			<button>START GAME</button>
 		</div>
 
 		<div id="puzzlebox-container" class="flexcenter">
 			<!--puzzlebox container-->
+			<div id="puzzle0" class="puzzlebox"></div>
 			<div id="puzzle1" class="puzzlebox"></div>
 			<div id="puzzle2" class="puzzlebox"></div>
+			<div id="puzzle3" class="puzzlebox"></div>
+			<div id="puzzle4" class="puzzlebox"></div>
+			<div id="puzzle5" class="puzzlebox"></div>
+			<div id="puzzle6" class="puzzlebox"></div>
+			<div id="puzzle7" class="puzzlebox"></div>
+			<div id="puzzle8" class="puzzlebox"></div>
+			<div id="puzzle9" class="puzzlebox"></div>
 		</div>
 
 		<div id="hintbox-container" class="flexcenter">
 			<!--hint box container-->
-			<div id="easy" class="hintbox"><h1>easy</h1></div>
-			<div id="medium" class="hintbox"><h1>medium</h1></div>
-			<div id="hard" class="hintbox"><h1>hard</h1></div>
-
-			<!-- <div id="easy2" class="hintbox"><h1>easy</h1></div>
-			<div id="medium2" class="hintbox"><h1>medium</h1></div>
-			<div id="hard2" class="hintbox"><h1>hard</h1></div> -->
+			<div id="easy" class="hintbox"><h2>EASY</h2></div>
+			<div id="medium" class="hintbox"><h2>MEDIUM</h2></div>
+			<div id="hard" class="hintbox"><h2>HARD</h2></div>
 		</div>
 
 		<div id="hintcontent-container" class="flexcenter">
 			<!--hint content container-->
 			<div class="contentbox">
-				<!-- <h1>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
-					molestiae, eligendi mollitia est suscipit maxime optio doloremque
-					saepe ullam eum, doloribus nulla ipsam neque laborum quasi
-					veritatis aut dolor magnam placeat iure consequatur. Perferendis,
-				</h1> -->
+				<!-- content generated from js -->
 			</div>
 		</div>
 
@@ -49,7 +51,7 @@
 			class="backbutton"
 			onclick="togglePuzzleboxContainer()"
 		>
-			back to puzzle
+			<h2>BACK</h2>
 		</div>
 
 		<div
@@ -57,7 +59,7 @@
 			class="backbutton"
 			onclick="toggleHintboxContainer()"
 		>
-			back to hint
+			<h2>BACK</h2>
 		</div>
 	</body>
 

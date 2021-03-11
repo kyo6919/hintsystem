@@ -1,11 +1,60 @@
-const puzzle1 = document.querySelector("#puzzle1");
 const easy = document.querySelector("#easy");
 const medium = document.querySelector("#medium");
 const hard = document.querySelector("#hard");
 const contentBox = document.querySelector(".contentbox");
+
+//puzzle hint contents
 const hintarr = [
-	[111, 222, 333],
-	[444, 555, 666],
+	[
+		"This shape looks odd, Maybe it needs a few more pieces to complete a shape.",
+		"There is 5 pieces in total.",
+		"You need to make a cube with matching patterns",
+	],
+	[
+		"Shhhh. Everyone needs to be quiet",
+		"Listen to the tune every 3 minutes and repeat it",
+		"Each note is used only once.",
+	],
+	[
+		"The symbol of top of the box looks familiar",
+		"the carvings on the wall seem useful to open this box",
+		"turn the 3 dials to match the pictures to unlock the box",
+	],
+	[
+		"Just like in the movies ... I believe the eye needs some light",
+		"What tools do I have that provides light",
+		"Use the box with the laser and the mirror you've found",
+	],
+	[
+		"Find the piece missing from the center first. Take the wheel and roll it down the box. Make sure you use the decoded information.",
+		"Remember Hand and Arrow will guide you, so look for them.",
+		"Make sure to match the blue and white fingers respectively before you roll down the wheel, then the arrows will lead you the correct path.",
+	],
+	[
+		"Insert the scarabs into the holes .... something should happen.",
+		"You'll need to find the scarabs and puzzle pieces.",
+		"Must find the missing pieces, and the items must be in the correct spot.",
+	],
+	[
+		"Must find the missing Gods, and they must be in the correct spot.",
+		"Be sure to look all over each pillar for the four symbols underneath each God, the symbols are NOT in a line. Each pillar can only belong to one God. Once you hear a click, there will be a secret path; be sure to check around the room.",
+		'The "Big Nose" God lives on the back-left pillar.',
+	],
+	[
+		"The tablets across the hall from the lever looks  useful.",
+		"try mentally stacking them together.",
+		"look at each row by themselves..",
+	],
+	[
+		"the top of this box needs to be organized",
+		"surrender your hands to the mouth",
+		"the blue side must be facing you.",
+	],
+	[
+		"You must find the missing artifacts first.",
+		"3 pieces is all you need",
+		"This is the final puzzle",
+	],
 ];
 
 function togglePuzzleboxContainer() {
@@ -18,7 +67,7 @@ function togglePuzzleboxContainer() {
 		z.style.display = "none";
 	} else {
 		x.style.display = "none";
-		y.style.display = "block";
+		y.style.display = "flex";
 		z.style.display = "flex";
 	}
 }
@@ -32,18 +81,15 @@ function toggleHintboxContainer() {
 	if (x.style.display === "none") {
 		x.style.display = "flex";
 		y.style.display = "none";
-		yy.style.display = "block";
+		yy.style.display = "flex";
 		z.style.display = "none";
 	} else {
 		x.style.display = "none";
-		y.style.display = "block";
+		y.style.display = "flex";
 		yy.style.display = "none";
 		z.style.display = "flex";
 	}
 }
-// const puzzle = document.querySelectorAll('.puzzlebox')
-// for (var i = 0; i < puzzleboxes.length; i++) {
-// 	puzzleboxes[i].);
 
 let imgurl = [
 	"asset/0.jpg",
@@ -56,14 +102,11 @@ let imgurl = [
 	"asset/7.jpg",
 	"asset/8.jpg",
 	"asset/9.jpg",
-	"asset/10.jpg",
-	"asset/11.jpg",
 ];
 
 const puzzleboxes = document.querySelectorAll(".puzzlebox");
 for (let i = 0; i < puzzleboxes.length; i++) {
 	puzzleboxes[i].addEventListener("click", togglePuzzleboxContainer);
-	puzzleboxes[i].id = "puzzle" + i;
 
 	let img = document.createElement("img"); //create <img>
 	img.setAttribute("src", imgurl[i]); // set img src
@@ -75,18 +118,20 @@ for (let i = 0; i < hintboxes.length; i++) {
 	hintboxes[i].addEventListener("click", toggleHintboxContainer);
 }
 
+//make h2 dynamic
+let h2 = document.createElement("h2");
+contentBox.appendChild(h2);
 for (let i = 0; i < puzzleboxes.length; i++) {
 	const puzzle = puzzleboxes[i];
 	puzzle.addEventListener("click", () => {
 		easy.addEventListener("click", () => {
-			contentBox.textContent = hintarr[i][0];
-			count ++
+			h2.textContent = hintarr[i][0];
 		});
 		medium.addEventListener("click", () => {
-			contentBox.textContent = hintarr[i][1];
+			h2.textContent = hintarr[i][1];
 		});
 		hard.addEventListener("click", () => {
-			contentBox.textContent = hintarr[i][2];
+			h2.textContent = hintarr[i][2];
 		});
 	});
 }
@@ -112,11 +157,12 @@ function startTimer(duration, display) {
 }
 
 window.onload = function () {
-	var Minutes = 60 * 1,
+	var fiveMinutes = 60 * 1,
 		display = document.querySelector("#time");
-	startTimer(Minutes, display);
+	document.querySelector("button").addEventListener("click", function () {
+		startTimer(fiveMinutes, display);
+		this.style.display = "none";
+	});
 };
-//----//online clock code
 
-//puzzlebox[0]{easy: hint1, meidum:sdsad, hard: hereerfew}
-//puzzlebox[1]{easy: hint234324, meidum:4353456, hard: 453453}
+//----//online clock code

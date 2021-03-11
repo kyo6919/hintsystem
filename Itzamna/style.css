@@ -8,21 +8,29 @@ body {
 	height: 100vh;
 	margin: auto;
 	position: relative;
+	background-color: darkgrey;
+	border: darkmagenta 1px solid;
 }
-
+button {
+	padding: 10px;
+}
 img {
 	max-width: 100%;
 }
-
 h1 {
 	color: white;
 	text-align: center;
 }
+h2 {
+	color: white;
+	text-align: center;
+}
 
-.flex {
+.flexcentercol {
 	display: flex;
-	justify-content: flex-start;
-	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 	flex-wrap: wrap;
 }
 
@@ -53,7 +61,11 @@ h1 {
 	width: 150px;
 	background-color: blue;
 	margin: 25px 25px 0px 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
+
 #hintbox-container {
 	display: none;
 }
@@ -69,10 +81,13 @@ h1 {
 }
 
 .contentbox {
-	height: 250px;
-	width: 800px;
+	height: 300px;
+	width: 900px;
 	background-color: blue;
 	margin: 25px 25px 0px 25px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 #backtopuzzle {
@@ -82,7 +97,9 @@ h1 {
 	background-color: green;
 	margin: 25px 25px 0px 25px;
 	position: absolute;
-	top: 400px;
+	bottom: 100px;
+	justify-content: center;
+	align-items: center;
 }
 #backtohint {
 	display: none;
@@ -91,8 +108,10 @@ h1 {
 	background-color: green;
 	margin: 25px 25px 0px 25px;
 	position: absolute;
-	top: 400px;
-	left: 800px;
+	bottom: 100px;
+	right: 0px;
+	justify-content: center;
+	align-items: center;
 }
 
 /*--copied code for clock*/
