@@ -8,54 +8,84 @@ const puzzleboxes = [];
 //puzzle hint contents
 const hintarr = [
 	[
-		"This shape looks odd, Maybe it needs a few more pieces to complete a shape.",
-		"There is 5 pieces in total.",
-		"You need to make a cube with matching patterns",
+		"Someone has left their mark in the worst possible way",
+		"Someone put their hands on this dresser for a reason",
+		"Put your hands on the two bloody handprints",
 	],
 	[
-		"Shhhh. Everyone needs to be quiet",
-		"Listen to the tune every 3 minutes and repeat it",
-		"Each note is used only once.",
+		"There seems to be a hole at the top of this depiction.",
+		"What can fit in the hole above the goat? (make sure you lift the cloth up)",
+		"Use the cross in the hole",
 	],
 	[
-		"The symbol of top of the box looks familiar",
-		"the carvings on the wall seem useful to open this box",
-		"turn the 3 dials to match the pictures to unlock the box",
+		"The pentagram is now lit up. Is there another pentagram in the room?",
+		"The candle seems to have some effect on the lights.",
+		"Use the red candle and touch the words beside the lights. You'll want to change each light to match the colours shown on the cabinet that has a pentagram drawn on it. Orange, yellow, blue, green, purple",
 	],
 	[
-		"Just like in the movies ... I believe the eye needs some light",
-		"What tools do I have that provides light",
-		"Use the box with the laser and the mirror you've found",
+		"I think I've seen this before..",
+		"It seems to match the dial",
+		"Touch the dial that is identical to this picture",
 	],
 	[
-		"Find the piece missing from the center first. Take the wheel and roll it down the box. Make sure you use the decoded information.",
-		"Remember Hand and Arrow will guide you, so look for them.",
-		"Make sure to match the blue and white fingers respectively before you roll down the wheel, then the arrows will lead you the correct path.",
+		"It looks as though something goes here",
+		"A periodic table would help determine where the test tubes go",
+		"Use the periodic table to find the number associated with each test tube",
 	],
 	[
-		"Insert the scarabs into the holes .... something should happen.",
-		"You'll need to find the scarabs and puzzle pieces.",
-		"Must find the missing pieces, and the items must be in the correct spot.",
+		"There is a slightly raised part on this desk... maybe something was placed here",
+		"Hmmm.. The raised part looks like the outline of a book.",
+		"Place the bible on the raised piece on the desk。",
 	],
 	[
-		"Must find the missing Gods, and they must be in the correct spot.",
-		"Be sure to look all over each pillar for the four symbols underneath each God, the symbols are NOT in a line. Each pillar can only belong to one God. Once you hear a click, there will be a secret path; be sure to check around the room.",
-		'The "Big Nose" God lives on the back-left pillar.',
+		"I like to dance",
+		"All of my passwords I write in my diary",
+		"Use the dance steps on the diary scrap to unlock the phone.",
 	],
 	[
-		"The tablets across the hall from the lever looks  useful.",
-		"try mentally stacking them together.",
-		"look at each row by themselves..",
+		"Hmmm... these bloody pictures look like they may have a purpose",
+		"Maybe the phone can be used to help you",
+		"Touch the back of the phone to the bloody pictures to discover the 4 digit code.",
 	],
 	[
-		"the top of this box needs to be organized",
-		"surrender your hands to the mouth",
-		"the blue side must be facing you.",
+		"Shhhh.. do you hear that?",
+		"Perhaps a piece of this dollhouse can replicate the sound you keep hearing.",
+		"Use the chimney to replicate the knocking you hear on the roof of the dollhouse",
 	],
 	[
-		"You must find the missing artifacts first.",
-		"3 pieces is all you need",
-		"This is the final puzzle",
+		"press the 3 buttons",
+		"all green lights must match the green triangle",
+		"get 2 sides finished first.",
+	],
+	[
+		"You need to solve the light puzzle first",
+		"The right side is locked... maybe the 5 jars of body parts can help unlock it",
+		"Place the 5 jars in the correct order in the spots above the light puzzle once you solve it. Use the map in the right cabinet to help you",
+	],
+	[
+		"You need to solve the light puzzle and open the cabinet on the left first.",
+		"It looks like something bloody was here previously.. gross",
+		"Use the baby's head and stick it on the pike",
+	],
+	[
+		"Retina scanner",
+		"Your eye won't unlock the door",
+		"Find the eye that can unlock the door",
+	],
+	[
+		"You need to solve the light puzzle first",
+		"Each drawer needs to be pulled out to a certain position.",
+		"The second drawer is pulled out the most, while the bottom drawer is pulled out the least. The third drawer needs to be pulled out a bit further than bottom drawer, and the fourth drawer needs to be pulled out a bit further than the third drawer. There are markings on the right side of the drawers to help guide you.",
+	],
+	[
+		"Looks like something can fit in the center",
+		"It almost looks like the outline of a spider...",
+		"Find all the pieces of the spider and place them in the spot on this desk",
+	],
+	[
+		"Poor Lucious... Maybe one more ritual can free him",
+		"Maybe the white candles can complete the ritual",
+		"Place the candles at the points of the Pentagram and ignite each flame",
 	],
 ];
 let imgurl = [
@@ -69,9 +99,13 @@ let imgurl = [
 	"asset/7.jpg",
 	"asset/8.jpg",
 	"asset/9.jpg",
+	"asset/10.jpg",
+	"asset/11.jpg",
+	"asset/12.jpg",
+	"asset/13.jpg",
+	"asset/14.jpg",
+	"asset/15.jpg",
 ];
-
-
 
 function togglePuzzleboxContainer() {
 	const x = document.getElementById("puzzlebox-container");

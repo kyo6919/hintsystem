@@ -7,55 +7,62 @@ const puzzleboxContainer = document.querySelector("#puzzlebox-container");
 const puzzleboxes = [];
 //puzzle hint contents
 const hintarr = [
+	["Alignment is key", "There is 5 pieces in total.", "Find the dragon"],
 	[
-		"This shape looks odd, Maybe it needs a few more pieces to complete a shape.",
-		"There is 5 pieces in total.",
-		"You need to make a cube with matching patterns",
+		"Build the wall that separates the kingdoms",
+		"This looks like jigsaw puzzle pieces",
+		"Use all the pieces.",
 	],
 	[
-		"Shhhh. Everyone needs to be quiet",
-		"Listen to the tune every 3 minutes and repeat it",
-		"Each note is used only once.",
+		"Each sword should be a different length",
+		"Look around for the names that match the sword",
+		"Look near the castles and cogs",
 	],
 	[
-		"The symbol of top of the box looks familiar",
-		"the carvings on the wall seem useful to open this box",
-		"turn the 3 dials to match the pictures to unlock the box",
+		"The medallion and lights will guide you home",
+		"A piece of land is missing in the kingdoms",
+		"Use memory and the medallion. Touch all the red lights, then blue lights, then green lights, then purple lights",
 	],
 	[
-		"Just like in the movies ... I believe the eye needs some light",
-		"What tools do I have that provides light",
-		"Use the box with the laser and the mirror you've found",
+		"It looks like somethings are missing.",
+		"Find the missing pieces.",
+		"Three additional gears will help you on your journey.",
+	],
+	["Claim the Iron Throne", "Claim the Iron Throne", "Claim the Iron Throne"],
+	[
+		"We need to make a few adjustments",
+		"Perhaps there should be a depiction of something here",
+		"Rearrange the spider",
 	],
 	[
-		"Find the piece missing from the center first. Take the wheel and roll it down the box. Make sure you use the decoded information.",
-		"Remember Hand and Arrow will guide you, so look for them.",
-		"Make sure to match the blue and white fingers respectively before you roll down the wheel, then the arrows will lead you the correct path.",
+		"This can be used to solve another puzzle",
+		"This can be used to solve another puzzle",
+		"This can be used to solve another puzzle",
 	],
 	[
-		"Insert the scarabs into the holes .... something should happen.",
-		"You'll need to find the scarabs and puzzle pieces.",
-		"Must find the missing pieces, and the items must be in the correct spot.",
+		"Group the tiles together while reading through the journal you found. Use the empty table behind you to keep things separated. The only information for these tiles is in this book, and process of elimination is key.",
+		'The "Oak Castle", "Dragon", and "Nobody but Us" tiles get placed based on the information in the book. After those are placed, the "Spider", "Strength in Unity", and the "Fish" will only have 1 option for placement on the board.',
+		'The "Fish" belongs to house Atlas.',
 	],
 	[
-		"Must find the missing Gods, and they must be in the correct spot.",
-		"Be sure to look all over each pillar for the four symbols underneath each God, the symbols are NOT in a line. Each pillar can only belong to one God. Once you hear a click, there will be a secret path; be sure to check around the room.",
-		'The "Big Nose" God lives on the back-left pillar.',
+		"Refer to the runic shield.",
+		"Find the 5 pairs of runic text around the room and compare to the runic shield",
+		"The 5 runes in the first room must be translated using the runic shield",
 	],
 	[
-		"The tablets across the hall from the lever looks  useful.",
-		"try mentally stacking them together.",
-		"look at each row by themselves..",
+		"The crests show important depictions",
+		"Perhaps the symbols are replicated elsewhere",
+		"This flag should be referenced for the chest with the map",
 	],
 	[
-		"the top of this box needs to be organized",
-		"surrender your hands to the mouth",
-		"the blue side must be facing you.",
+		"You must decode the cylinder before opening the chest.",
+		"Perhaps the symbols are replicated elsewhere",
+		"Look to the flag with the crests to aide your journey. There are items within the crests that are also on the map.",
 	],
 	[
-		"You must find the missing artifacts first.",
-		"3 pieces is all you need",
-		"This is the final puzzle",
+		"Unite the four kingdoms",
+		"Shapes are outlined here",
+		"Four artifacts from the kingdoms are missing",
 	],
 ];
 let imgurl = [
@@ -69,9 +76,10 @@ let imgurl = [
 	"asset/7.jpg",
 	"asset/8.jpg",
 	"asset/9.jpg",
+	"asset/10.jpg",
+	"asset/11.jpg",
+	"asset/12.jpg",
 ];
-
-
 
 function togglePuzzleboxContainer() {
 	const x = document.getElementById("puzzlebox-container");

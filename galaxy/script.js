@@ -8,54 +8,59 @@ const puzzleboxes = [];
 //puzzle hint contents
 const hintarr = [
 	[
-		"This shape looks odd, Maybe it needs a few more pieces to complete a shape.",
-		"There is 5 pieces in total.",
-		"You need to make a cube with matching patterns",
+		"Looks like I need to lead the ball somewhere.",
+		"There are holes in the screen, looks like I need to put something in to redirect the ball.",
+		"There are 3 blockers hidden throughout the room that you can use to guide the ball into the middle hole.",
 	],
 	[
-		"Shhhh. Everyone needs to be quiet",
-		"Listen to the tune every 3 minutes and repeat it",
-		"Each note is used only once.",
+		"Lets take a look around the room to see if I can find the password.",
+		"There's a board on the wall. I don't remember what that means.",
+		"The board on the wall will decipher the 4 digit password for you",
 	],
 	[
-		"The symbol of top of the box looks familiar",
-		"the carvings on the wall seem useful to open this box",
-		"turn the 3 dials to match the pictures to unlock the box",
+		"The plant creature looks thirsty.",
+		"you must find a water source.",
+		"the water source is hidden inside the locker.",
 	],
 	[
-		"Just like in the movies ... I believe the eye needs some light",
-		"What tools do I have that provides light",
-		"Use the box with the laser and the mirror you've found",
+		"Oh no there isn't any power in the spaceship, lets see if we can find the parts to power the panel.",
+		"Do the parts need to go a certain way.",
+		"Find all 3 parts to power the panel.",
 	],
 	[
-		"Find the piece missing from the center first. Take the wheel and roll it down the box. Make sure you use the decoded information.",
-		"Remember Hand and Arrow will guide you, so look for them.",
-		"Make sure to match the blue and white fingers respectively before you roll down the wheel, then the arrows will lead you the correct path.",
+		"Looks like they used this to navigate the ship. Lets try to find the right coordinates.",
+		"What planet were we heading to last? I think there was a planet in the first room.",
+		"There was a red planet in the first room, lets check where the red planet is on the side map.",
 	],
 	[
-		"Insert the scarabs into the holes .... something should happen.",
-		"You'll need to find the scarabs and puzzle pieces.",
-		"Must find the missing pieces, and the items must be in the correct spot.",
+		"Alright, I need to find the key to turn this machine on.",
+		"Why is there a red circle on the top, do I need to put something there?",
+		"Alright I need to hold the START button for something to happen.",
 	],
 	[
-		"Must find the missing Gods, and they must be in the correct spot.",
-		"Be sure to look all over each pillar for the four symbols underneath each God, the symbols are NOT in a line. Each pillar can only belong to one God. Once you hear a click, there will be a secret path; be sure to check around the room.",
-		'The "Big Nose" God lives on the back-left pillar.',
+		"Why is there a hole in the middle.",
+		"I think I remember seeing the red circle somewhere else in this room.",
+		"I need to use a light source to power the machine.",
 	],
 	[
-		"The tablets across the hall from the lever looks  useful.",
-		"try mentally stacking them together.",
-		"look at each row by themselves..",
+		"Alright the memory game is activated, I remember it being 5-7-9 patterns.",
+		"If you fail the patterns reset. Ask a friend to help you remember some.",
+		"The more friends you have, the easier it is to remember.",
 	],
 	[
-		"the top of this box needs to be organized",
-		"surrender your hands to the mouth",
-		"the blue side must be facing you.",
+		"There is a secret compartment here that needs to be unlocked",
+		"The red square looks like its missing a part.",
+		"You must find a cube shaped key to open this secret compartment",
 	],
 	[
-		"You must find the missing artifacts first.",
-		"3 pieces is all you need",
-		"This is the final puzzle",
+		"It looks like we need to drop 3 large balls into this puzzle",
+		"There are 2 stages to this puzzle",
+		"All balls must land at the same time.",
+	],
+	[
+		"It looks like the Energy Crystal is inside!",
+		"I think we need to blast this open somehow.",
+		"Is there a gun locked away in another compartment?",
 	],
 ];
 let imgurl = [
@@ -69,6 +74,7 @@ let imgurl = [
 	"asset/7.jpg",
 	"asset/8.jpg",
 	"asset/9.jpg",
+	"asset/10.jpg",
 ];
 
 
