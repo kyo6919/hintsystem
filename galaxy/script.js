@@ -77,8 +77,6 @@ let imgurl = [
 	"asset/10.jpg",
 ];
 
-
-
 function togglePuzzleboxContainer() {
 	const x = document.getElementById("puzzlebox-container");
 	const y = document.getElementById("backtopuzzle");
@@ -150,32 +148,44 @@ for (let i = 0; i < puzzleboxes.length; i++) {
 }
 
 //online clock code
+var timerId = null;
 function startTimer(duration, display) {
 	var timer = duration,
 		minutes,
 		seconds;
-	setInterval(function () {
+	if (timerId != null) {
+		clearInterval(timerId);
+	}
+	timerId = setInterval(() => {
 		minutes = parseInt(timer / 60, 10);
 		seconds = parseInt(timer % 60, 10);
 
+		//check for single digit minutes
 		minutes = minutes < 10 ? "0" + minutes : minutes;
 		seconds = seconds < 10 ? "0" + seconds : seconds;
 
 		display.textContent = minutes + ":" + seconds;
-
 		if (--timer < 0) {
 			timer = duration;
 		}
 	}, 1000);
 }
 
-window.onload = function () {
-	var fiveMinutes = 60 * 60,
-		display = document.querySelector("#time");
-	document.querySelector("button").addEventListener("click", function () {
-		startTimer(fiveMinutes, display);
-		this.style.display = "none";
-	});
+window.onload = () => {
+	const oneHour = 60 * 60;
+	const display = document.querySelector("#time");
+	document
+		.querySelector("#startbutton")
+		.addEventListener("click", function () {
+			startTimer(oneHour, display);
+			this.style.display = "none";
+		});
 };
+
+document.querySelector("#resetbutton").addEventListener("click", () => {
+	clearInterval(timerId);
+	document.querySelector("#time").textContent = "60:00";
+	document.querySelector("#startbutton").style.display = "block";
+});
 
 //----//online clock code
