@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
+		<meta http-equiv="PRAGMA" content="NO-CACHE" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Galaxy</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body>
+		<div class="flexcentercol" id="timerbox">
+			<!-- <h1>Countdown Clock</h1> -->
+
+			<div>
+				<h1 id="time">60:00</h1>
+			</div>
+			<button id="startbutton">START GAME</button>
+			<!--<button id="resetbutton">RESET GAME</button>-->
+		</div>
+
+		<div id="puzzlebox-container" class="flexcenter">
+			<!--puzzlebox container-->
+		</div>
+
+		<div id="hintbox-container" class="flexcenter">
+			<!--hint box container-->
+			<div id="easy" class="hintbox"><h2>EASY</h2></div>
+			<div id="medium" class="hintbox"><h2>MEDIUM</h2></div>
+			<div id="hard" class="hintbox"><h2>HARD</h2></div>
+		</div>
+
+		<div id="hintcontent-container" class="flexcenter">
+			<!--hint content container-->
+			<div class="contentbox">
+				<!-- content generated from js -->
+			</div>
+		</div>
+
+		<div
+			id="backtopuzzle"
+			class="backbutton"
+			onclick="togglePuzzleboxContainer()"
+		>
+			<h2>BACK</h2>
+		</div>
+
+		<div
+			id="backtohint"
+			class="backbutton"
+			onclick="toggleHintboxContainer()"
+		>
+			<h2>BACK</h2>
+		</div>
+	</body>
+
+	<script src="script.js"></script>
+</html>
