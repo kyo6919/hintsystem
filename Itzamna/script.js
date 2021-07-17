@@ -1,14 +1,17 @@
-const easy = document.querySelector("#easy");
-const medium = document.querySelector("#medium");
-const hard = document.querySelector("#hard");
-const contentBox = document.querySelector(".contentbox");
-const puzzleboxContainer = document.querySelector("#puzzlebox-container");
+var easy = document.querySelector("#easy");
+var medium = document.querySelector("#medium");
+var hard = document.querySelector("#hard");
+var contentBox = document.querySelector(".contentbox");
+var puzzleboxContainer = document.querySelector("#puzzlebox-container");
+var oneHour = 3600;
+var display = document.getElementById("time");
+var startbutton = document.getElementById("startbutton")
 
-const puzzleboxes = [];
+var puzzleboxes = [];
 //puzzle hint contents
-const hintarr = [
+var hintarr = [
 	[
-		"This shape looks odd, Maybe it needs a few more pieces to complete a shape.",
+		"This shape looks odd, Maybe it needs a few more pieces to compvare a shape.",
 		"There is 5 pieces in total.",
 		"You need to make a cube with matching patterns",
 	],
@@ -43,7 +46,7 @@ const hintarr = [
 		'The "Big Nose" God lives on the back-left pillar.',
 	],
 	[
-		"The tablets across the hall from the lever looks  useful.",
+		"The tabvars across the hall from the lever looks  useful.",
 		"try mentally stacking them together.",
 		"look at each row by themselves..",
 	],
@@ -58,7 +61,7 @@ const hintarr = [
 		"This is the final puzzle",
 	],
 ];
-let imgurl = [
+var imgurl = [
 	"asset/0.jpg",
 	"asset/1.jpg",
 	"asset/2.jpg",
@@ -74,9 +77,9 @@ let imgurl = [
 
 
 function togglePuzzleboxContainer() {
-	const x = document.getElementById("puzzlebox-container");
-	const y = document.getElementById("backtopuzzle");
-	const z = document.getElementById("hintbox-container");
+	var x = document.getElementById("puzzlebox-container");
+	var y = document.getElementById("backtopuzzle");
+	var z = document.getElementById("hintbox-container");
 	if (x.style.display === "none") {
 		x.style.display = "flex";
 		y.style.display = "none";
@@ -89,10 +92,10 @@ function togglePuzzleboxContainer() {
 }
 
 function toggleHintboxContainer() {
-	const x = document.getElementById("hintbox-container");
-	const y = document.getElementById("backtohint");
-	const yy = document.getElementById("backtopuzzle");
-	const z = document.getElementById("hintcontent-container");
+	var x = document.getElementById("hintbox-container");
+	var y = document.getElementById("backtohint");
+	var yy = document.getElementById("backtopuzzle");
+	var z = document.getElementById("hintcontent-container");
 
 	if (x.style.display === "none") {
 		x.style.display = "flex";
@@ -108,11 +111,11 @@ function toggleHintboxContainer() {
 }
 
 //count # of image from array and make same # of element
-for (let i = 0; i < imgurl.length; i++) {
-	let puzzlebox = document.createElement("div");
+for (var i = 0; i < imgurl.length; i++) {
+	var puzzlebox = document.createElement("div");
 	puzzlebox.classList.add("puzzlebox");
 	puzzlebox.addEventListener("click", togglePuzzleboxContainer);
-	let img = document.createElement("img"); //create <img>
+	var img = document.createElement("img"); //create <img>
 	img.setAttribute("src", imgurl[i]); // set img src
 	puzzlebox.appendChild(img);
 	puzzleboxContainer.appendChild(puzzlebox);
@@ -120,25 +123,26 @@ for (let i = 0; i < imgurl.length; i++) {
 }
 
 //--add event listener to all hintboxes
-const hintboxes = document.querySelectorAll(".hintbox");
-for (let i = 0; i < hintboxes.length; i++) {
+var hintboxes = document.querySelectorAll(".hintbox");
+for (var i = 0; i < hintboxes.length; i++) {
 	hintboxes[i].addEventListener("click", toggleHintboxContainer);
 }
 
 //add hint content into box
-let h2 = document.createElement("h2");
+var h2 = document.createElement("h2");
 contentBox.appendChild(h2);
-for (let i = 0; i < puzzleboxes.length; i++) {
-	const puzzle = puzzleboxes[i];
-	puzzle.addEventListener("click", () => {
-		easy.addEventListener("click", () => {
-			h2.textContent = hintarr[i][0];
+for (var i = 0; i < puzzleboxes.length; i++) {
+	var puzzle = puzzleboxes[i];
+
+	puzzle.addEventListener("click", function(){
+		easy.addEventListener("click", function() {
+			h2.textContent = hintarr[i];
 		});
-		medium.addEventListener("click", () => {
-			h2.textContent = hintarr[i][1];
+		medium.addEventListener("click", function() {
+			h2.textContent = hintarr[i];
 		});
-		hard.addEventListener("click", () => {
-			h2.textContent = hintarr[i][2];
+		hard.addEventListener("click", function(){
+			h2.textContent = hintarr[i];
 		});
 	});
 }
@@ -146,13 +150,13 @@ for (let i = 0; i < puzzleboxes.length; i++) {
 //online clock code
 var timerId = null;
 function startTimer(duration, display) {
-	var timer = duration,
-		minutes,
-		seconds;
+	var timer = duration;
+	var	minutes;
+	var	seconds;
 	if (timerId != null) {
 		clearInterval(timerId);
 	}
-	timerId = setInterval(() => {
+	timerId = setInterval(function() {
 		minutes = parseInt(timer / 60, 10);
 		seconds = parseInt(timer % 60, 10);
 
@@ -161,27 +165,25 @@ function startTimer(duration, display) {
 		seconds = seconds < 10 ? "0" + seconds : seconds;
 
 		display.textContent = minutes + ":" + seconds;
-		if (--timer < 0) {
+		if (timer < 0) {
 			timer = duration;
 		}
 	}, 1000);
 }
 
-window.onload = () => {
-	const oneHour = 60 * 60;
-	const display = document.querySelector("#time");
-	document
-		.querySelector("#startbutton")
-		.addEventListener("click", function () {
+//window.onload = function() {
+	
+	
+	startbutton.addEventListener("click",  function() {
 			startTimer(oneHour, display);
-			this.style.display = "none";
+			startbutton.style.display = "none";
 		});
-};
+//};
 
-document.querySelector("#resetbutton").addEventListener("click", () => {
+document.getElementById("resetbutton").addEventListener("click", function() {
 	clearInterval(timerId);
-	document.querySelector("#time").textContent = "60:00";
-	document.querySelector("#startbutton").style.display = "block";
+	document.getElementById("time").textContent = "60:00";
+	document.getElementById("startbutton").style.display = "block";
 });
 
 //----//online clock code
