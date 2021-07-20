@@ -17,7 +17,7 @@
 			<!-- <h1>Countdown Clock</h1> -->
 
 			<div>
-				<h1 id="time">60:00</h1>
+				<h1 id="timer">60:00</h1>
 			</div>
 			<button id="startbutton">START GAME</button>
 			<button id="resetbutton">RESET GAME</button>
@@ -25,6 +25,36 @@
 
 		<div id="puzzlebox-container" class="flexcenter">
 			<!--puzzlebox container-->
+			<div class="puzzlebox" id="0" onclick="getId(this.id)">
+				<img src="asset/0.jpg" />
+			</div>
+			<div class="puzzlebox" id="1" onclick="getId(this.id)">
+				<img src="asset/1.jpg" />
+			</div>
+			<div class="puzzlebox" id="2" onclick="getId(this.id)">
+				<img src="asset/2.jpg" />
+			</div>
+			<div class="puzzlebox" id="3" onclick="getId(this.id)">
+				<img src="asset/3.jpg" />
+			</div>
+			<div class="puzzlebox" id="4" onclick="getId(this.id)">
+				<img src="asset/4.jpg" />
+			</div>
+			<div class="puzzlebox" id="5" onclick="getId(this.id)">
+				<img src="asset/5.jpg" />
+			</div>
+			<div class="puzzlebox" id="6" onclick="getId(this.id)">
+				<img src="asset/6.jpg" />
+			</div>
+			<div class="puzzlebox" id="7" onclick="getId(this.id)">
+				<img src="asset/7.jpg" />
+			</div>
+			<div class="puzzlebox" id="8" onclick="getId(this.id)">
+				<img src="asset/8.jpg" />
+			</div>
+			<div class="puzzlebox" id="9" onclick="getId(this.id)">
+				<img src="asset/9.jpg" />
+			</div>
 		</div>
 
 		<div id="hintbox-container" class="flexcenter">
@@ -37,6 +67,7 @@
 		<div id="hintcontent-container" class="flexcenter">
 			<!--hint content container-->
 			<div class="contentbox">
+				<h2 id="hinttext"></h2>
 				<!-- content generated from js -->
 			</div>
 		</div>

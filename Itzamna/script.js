@@ -3,13 +3,12 @@ var medium = document.querySelector("#medium");
 var hard = document.querySelector("#hard");
 var contentBox = document.querySelector(".contentbox");
 var puzzleboxContainer = document.querySelector("#puzzlebox-container");
-var oneHour = 3600;
 var display = document.getElementById("time");
-var startbutton = document.getElementById("startbutton")
-
-var puzzleboxes = [];
-//puzzle hint contents
-var hintarr = [
+var startbutton = document.getElementById("startbutton");
+var resetbutton = document.getElementById("resetbutton");
+var currentId = 0;
+var hinttext = document.getElementById("hinttext");
+const hintarr = [
 	[
 		"This shape looks odd, Maybe it needs a few more pieces to compvare a shape.",
 		"There is 5 pieces in total.",
@@ -74,7 +73,10 @@ var imgurl = [
 	"asset/9.jpg",
 ];
 
-
+function getId(id) {
+	currentId = id;
+	console.log(currentId);
+}
 
 function togglePuzzleboxContainer() {
 	var x = document.getElementById("puzzlebox-container");
@@ -110,16 +112,10 @@ function toggleHintboxContainer() {
 	}
 }
 
-//count # of image from array and make same # of element
-for (var i = 0; i < imgurl.length; i++) {
-	var puzzlebox = document.createElement("div");
-	puzzlebox.classList.add("puzzlebox");
-	puzzlebox.addEventListener("click", togglePuzzleboxContainer);
-	var img = document.createElement("img"); //create <img>
-	img.setAttribute("src", imgurl[i]); // set img src
-	puzzlebox.appendChild(img);
-	puzzleboxContainer.appendChild(puzzlebox);
-	puzzleboxes.push(puzzlebox); //creates arrary
+//--add event listener to all puzzleboxes
+var puzzleboxes = document.querySelectorAll(".puzzlebox");
+for (var i = 0; i < puzzleboxes.length; i++) {
+	puzzleboxes[i].addEventListener("click", togglePuzzleboxContainer);
 }
 
 //--add event listener to all hintboxes
@@ -129,60 +125,45 @@ for (var i = 0; i < hintboxes.length; i++) {
 }
 
 //add hint content into box
-var h2 = document.createElement("h2");
-contentBox.appendChild(h2);
-for (var i = 0; i < puzzleboxes.length; i++) {
-	var puzzle = puzzleboxes[i];
-
-	puzzle.addEventListener("click", function(){
-		easy.addEventListener("click", function() {
-			h2.textContent = hintarr[i];
-		});
-		medium.addEventListener("click", function() {
-			h2.textContent = hintarr[i];
-		});
-		hard.addEventListener("click", function(){
-			h2.textContent = hintarr[i];
-		});
-	});
+function addEasyContent() {
+	hinttext.textContent = hintarr[currentId][0];
 }
+function addMediumContent() {
+	hinttext.textContent = hintarr[currentId][1];
+}
+function addHardContent() {
+	hinttext.textContent = hintarr[currentId][2];
+}
+easy.addEventListener("click", addEasyContent);
+medium.addEventListener("click", addMediumContent);
+hard.addEventListener("click", addHardContent);
 
-//online clock code
-var timerId = null;
-function startTimer(duration, display) {
-	var timer = duration;
-	var	minutes;
-	var	seconds;
-	if (timerId != null) {
-		clearInterval(timerId);
+
+//timer code
+var count = 3600;
+var counter = null;
+startbutton.addEventListener("click", function () {
+	counter = setInterval(timer, 1000); //1000 will  run it every 1 second
+	startbutton.style.display = "none";
+});
+
+function timer() {
+	var minutes;
+	var seconds;
+	count = count - 1;
+	if (count <= 0) {
+		clearInterval(counter);
+		return;
 	}
-	timerId = setInterval(function() {
-		minutes = parseInt(timer / 60, 10);
-		seconds = parseInt(timer % 60, 10);
-
-		//check for single digit minutes
-		minutes = minutes < 10 ? "0" + minutes : minutes;
-		seconds = seconds < 10 ? "0" + seconds : seconds;
-
-		display.textContent = minutes + ":" + seconds;
-		if (timer < 0) {
-			timer = duration;
-		}
-	}, 1000);
+	minutes = parseInt(count / 60, 10);
+	seconds = parseInt(count % 60, 10);
+	document.getElementById("timer").innerHTML = minutes + ":" + seconds; // watch for spelling
 }
 
-//window.onload = function() {
-	
-	
-	startbutton.addEventListener("click",  function() {
-			startTimer(oneHour, display);
-			startbutton.style.display = "none";
-		});
-//};
-
-document.getElementById("resetbutton").addEventListener("click", function() {
-	clearInterval(timerId);
-	document.getElementById("time").textContent = "60:00";
+resetbutton.addEventListener("click", function () {
+	clearInterval(counter);
+	count = 3600;
+	document.getElementById("timer").textContent = "60:00";
 	document.getElementById("startbutton").style.display = "block";
 });
 
