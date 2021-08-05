@@ -1,1 +1,1 @@
-# hintsystem
+# hintsystem, this one is created with an older version of JS for old browsers.
